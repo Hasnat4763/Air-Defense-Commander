@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://b232vwlx1bo3j"]
+
+[ext_resource type="Script" uid="uid://c16v8as2a7ros" path="res://scripts/start_screen.gd" id="1_egw1y"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_egw1y")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 43.0
+offset_right = 907.0
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0, 0.5430898, 0.32269084, 1)
+theme_override_font_sizes/font_size = 64
+text = "Air Defense Command"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 216.0
+offset_right = 754.0
+offset_bottom = 328.0
+theme_override_colors/font_color = Color(1.1551381e-06, 0.4787321, 0.23010638, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8011389, 0, 0.017402153, 1)
+theme_override_font_sizes/font_size = 64
+text = "Start Defending"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

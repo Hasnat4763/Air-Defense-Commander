@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuqyrdjqgh8n8"]
+
+[ext_resource type="Script" uid="uid://ufupak2ayxra" path="res://scripts/bombers.gd" id="1_5a3qa"]
+[ext_resource type="Texture2D" uid="uid://cbtgma78on4o3" path="res://sprites/bomber.png" id="2_2xfj0"]
+[ext_resource type="PackedScene" uid="uid://cqwpoo5tsvltm" path="res://tscn/bombs.tscn" id="2_6clfb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yhht"]
+size = Vector2(32, 7)
+
+[node name="bomber" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_5a3qa")
+bomb = ExtResource("2_6clfb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2xfj0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2yhht")
+
+[node name="bomb_drop_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="bomb_drop_timer" to="." method="_on_bomb_drop_timer_timeout"]

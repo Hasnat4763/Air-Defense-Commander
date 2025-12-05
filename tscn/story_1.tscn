@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://x35ake3tc02y"]
+
+[ext_resource type="Texture2D" uid="uid://cmy7n1jq3clqk" path="res://sprites/newspaper.png" id="1_bm6fj"]
+
+[sub_resource type="GDScript" id="GDScript_bm6fj"]
+script/source = "extends Node2D
+
+signal start
+
+var story_finish = 0
+
+
+func _ready() -> void:
+	pass # Replace with function body.
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		story_finish += 1
+		if story_finish == 1:
+			story_continue_1()
+		if story_finish == 2:
+			story_continue_2()
+		if story_finish == 3:
+			story_continue_3()
+		if story_finish == 4:
+			start.emit()
+
+func story_continue_1():
+	$Label.text = \"All Able Bodied Man \\n has been Recruited in the Military\"
+	$Sprite2D.hide()
+
+func story_continue_2():
+	$Label.text = \"You Have been recruited \\n in the Anti Aircraft Artillery Regiment\"
+
+func story_continue_3():
+	$Label.text = \"Your training starts tomorrow\"
+"
+
+[node name="Story1st" type="Node2D"]
+script = SubResource("GDScript_bm6fj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0.0900624, 0.14711756, 0.19583264, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(705.5, 271)
+scale = Vector2(0.8836805, 0.7472222)
+texture = ExtResource("1_bm6fj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 130.0
+offset_top = 224.0
+offset_right = 319.0
+offset_bottom = 325.0
+text = "In Agartha
+
+A news is broadcasted
+ in the whole country"
+horizontal_alignment = 1
+vertical_alignment = 1

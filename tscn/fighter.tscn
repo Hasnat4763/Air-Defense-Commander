@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba5cs8834fhrc"]
+
+[ext_resource type="Script" uid="uid://cd1j1ipjat056" path="res://scripts/fighter.gd" id="1_3bd4v"]
+[ext_resource type="Texture2D" uid="uid://cy8ga0wmfammu" path="res://sprites/fighter.png" id="1_4sy4q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bd4v"]
+size = Vector2(27, 8)
+
+[node name="fighter" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_3bd4v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4sy4q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_3bd4v")

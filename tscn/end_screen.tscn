@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dfr7meaj57wdp"]
+
+[node name="end_screen" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Score" type="Label" parent="."]
+offset_left = 551.0
+offset_top = 239.0
+offset_right = 892.0
+offset_bottom = 262.0
+text = "You have scored n Hits"
+
+[node name="shot_fired" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 237.0
+offset_right = 385.0
+offset_bottom = 286.0
+text = "You've fired n shots on m aircrafts
+"
+
+[node name="Conclusion" type="Label" parent="."]
+offset_right = 960.0
+offset_bottom = 171.0
+text = "Thanks soldier for your contribution on defending Agartha Today"
+horizontal_alignment = 1
+vertical_alignment = 1

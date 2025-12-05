@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqwpoo5tsvltm"]
+
+[ext_resource type="Texture2D" uid="uid://dbrld4n2jyte0" path="res://sprites/bombs.png" id="1_1p5j8"]
+[ext_resource type="Script" uid="uid://q0gjwibt5ddm" path="res://scripts/bombs.gd" id="1_hanl3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hanl3"]
+radius = 0.0
+height = 0.0
+
+[node name="bombs" type="Area2D" groups=["bomb"]]
+script = ExtResource("1_hanl3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_1p5j8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_hanl3")

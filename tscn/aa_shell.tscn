@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b46kpgy373nlc"]
+
+[ext_resource type="Script" uid="uid://dewu1yrgxfgyn" path="res://scripts/aa_shell.gd" id="1_h1x12"]
+[ext_resource type="Texture2D" uid="uid://cblyv8nhqdx0c" path="res://sprites/aa_shell.png" id="2_87giy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87giy"]
+radius = 4.0
+height = 16.0
+
+[node name="aa_shell" type="Area2D"]
+rotation = 1.5707964
+script = ExtResource("1_h1x12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_87giy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_87giy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

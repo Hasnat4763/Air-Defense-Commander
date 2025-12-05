@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg7cu5m0mxivo"]
+
+[ext_resource type="Texture2D" uid="uid://cy8ga0wmfammu" path="res://sprites/fighter.png" id="1_btm12"]
+[ext_resource type="Script" uid="uid://ciblepjp63g2y" path="res://scripts/tutorial_fighter.gd" id="1_d1l2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1l2g"]
+size = Vector2(27, 7)
+
+[node name="tutorial_fighter" type="Area2D"]
+script = ExtResource("1_d1l2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_d1l2g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_btm12")
+
+[node name="leading_indicator" type="Sprite2D" parent="."]

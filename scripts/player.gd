@@ -19,6 +19,7 @@ func _process(_delta: float) -> void:
 func shoot():
 	$Sprite2D.hide()
 	$Sprite2D2.show()
+	$fire.play()
 	can_shoot = false
 	var projectile = Projectile_Scene.instantiate()
 	projectile.global_position = $Muzzle.global_position

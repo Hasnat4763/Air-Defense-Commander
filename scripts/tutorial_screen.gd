@@ -1,5 +1,6 @@
 extends Node2D
 @export var tutorial_bomber_scene: PackedScene
+@export var tutorial_fighter_scene: PackedScene
 @export var player_ref: Node2D
 
 var tutorial_stage = 0

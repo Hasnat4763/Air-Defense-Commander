@@ -1,14 +1,11 @@
 extends Area2D
 @export var SPEED = 100
 var shell_speed = 500
-@export var leading_indicator: Sprite2D
+@onready var leading_indicator: Sprite2D = $leading_indicator
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	leading_indicator = Sprite2D.new()
 	add_child(leading_indicator)
-	var circle_texture = create_circle_texture(20, Color.GREEN)
-	leading_indicator.texture = circle_texture
 	leading_indicator.z_index = 10
 
 func _process(delta: float) -> void:

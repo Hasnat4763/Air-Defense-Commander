@@ -1,18 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuqyrdjqgh8n8"]
+[gd_scene load_steps=4 format=3 uid="uid://02oa1w1xc8ag"]
 
-[ext_resource type="Script" uid="uid://ufupak2ayxra" path="res://scripts/bombers.gd" id="1_5a3qa"]
-[ext_resource type="Texture2D" uid="uid://cbtgma78on4o3" path="res://sprites/bomber.png" id="2_2xfj0"]
-[ext_resource type="PackedScene" uid="uid://cqwpoo5tsvltm" path="res://tscn/bombs.tscn" id="2_6clfb"]
+[ext_resource type="Script" uid="uid://0upjbp4ab7o6" path="res://scripts/bomber_tutorial.gd" id="1_5dfqf"]
+[ext_resource type="Texture2D" uid="uid://cbtgma78on4o3" path="res://sprites/bomber.png" id="3_4ycy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yhht"]
 size = Vector2(32, 7)
 
-[node name="bomber" type="Area2D" groups=["enemy"]]
-script = ExtResource("1_5a3qa")
-bomb = ExtResource("2_6clfb")
+[node name="bomber_tutorial" type="Area2D" groups=["enemy", "tutorial"]]
+script = ExtResource("1_5dfqf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_2xfj0")
+texture = ExtResource("3_4ycy5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)

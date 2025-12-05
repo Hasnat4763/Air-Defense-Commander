@@ -10,7 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Air-Defense"
+config/name="Air-Defense-Command"
+config/description="Defend agartha from earth's air assault"
+config/version="1.0"
 run/main_scene="uid://cxfkvr8ye50lp"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
@@ -28,6 +30,9 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 enemy=""
 bomb=""
+aa_shell=""
+tutorial=""
+player=""
 
 [input]
 

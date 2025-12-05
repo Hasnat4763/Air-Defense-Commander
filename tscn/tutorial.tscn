@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ngyb5510os2y"]
+
+[ext_resource type="Script" uid="uid://bo7abj8mvwchn" path="res://scripts/tutorial_screen.gd" id="1_owhag"]
+[ext_resource type="PackedScene" uid="uid://baasbv75ckcpd" path="res://tscn/player.tscn" id="2_0u44k"]
+[ext_resource type="PackedScene" uid="uid://02oa1w1xc8ag" path="res://tscn/bomber_tutorial.tscn" id="2_k1doy"]
+[ext_resource type="Texture2D" uid="uid://c6re7wx7nip4d" path="res://sprites/bg.png" id="3_0u44k"]
+
+[node name="tutorial" type="Node2D" node_paths=PackedStringArray("player_ref")]
+script = ExtResource("1_owhag")
+tutorial_bomber_scene = ExtResource("2_k1doy")
+player_ref = NodePath("Player")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("3_0u44k")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Tutorial" type="Label" parent="UI"]
+offset_left = 26.0
+offset_top = 97.0
+offset_right = 539.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(0.7755984, 0.56485826, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "n aircrafts has been spotted coming towards Agartha"
+
+[node name="Score" type="Label" parent="UI"]
+offset_left = 803.0
+offset_top = 27.0
+offset_right = 928.0
+offset_bottom = 87.0
+text = "Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("2_0u44k")]
+position = Vector2(960, 540)
+rotation = 1.5707964

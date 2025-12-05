@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxfkvr8ye50lp"]
+[gd_scene load_steps=10 format=3 uid="uid://cxfkvr8ye50lp"]
 
 [ext_resource type="Script" uid="uid://d00fxgpf1l0fd" path="res://scripts/Main_Scene.gd" id="1_yanl8"]
 [ext_resource type="PackedScene" uid="uid://cuqyrdjqgh8n8" path="res://tscn/bomber.tscn" id="2_cppny"]
 [ext_resource type="PackedScene" uid="uid://ba5cs8834fhrc" path="res://tscn/fighter.tscn" id="3_ggqsd"]
 [ext_resource type="PackedScene" uid="uid://b232vwlx1bo3j" path="res://tscn/start_screen.tscn" id="3_jboqg"]
 [ext_resource type="PackedScene" uid="uid://baasbv75ckcpd" path="res://tscn/player.tscn" id="3_yanl8"]
+[ext_resource type="PackedScene" uid="uid://ngyb5510os2y" path="res://tscn/tutorial.tscn" id="4_r3xed"]
 [ext_resource type="Texture2D" uid="uid://c6re7wx7nip4d" path="res://sprites/bg.png" id="5_jboqg"]
 [ext_resource type="PackedScene" uid="uid://x35ake3tc02y" path="res://tscn/story_1.tscn" id="7_ko54i"]
 [ext_resource type="PackedScene" uid="uid://dfr7meaj57wdp" path="res://tscn/end_screen.tscn" id="8_n3buc"]
@@ -18,7 +19,7 @@ fighter = ExtResource("3_ggqsd")
 position = Vector2(480, 270)
 texture = ExtResource("5_jboqg")
 
-[node name="StartScreen" parent="." instance=ExtResource("3_jboqg")]
+[node name="tutorial" parent="." instance=ExtResource("4_r3xed")]
 
 [node name="Player" parent="." instance=ExtResource("3_yanl8")]
 position = Vector2(960, 540)
@@ -44,3 +45,5 @@ vertical_alignment = 1
 
 [node name="end_screen" parent="." instance=ExtResource("8_n3buc")]
 visible = false
+
+[node name="StartScreen" parent="." instance=ExtResource("3_jboqg")]

@@ -34,4 +34,16 @@ theme_override_colors/font_hover_pressed_color = Color(0.8011389, 0, 0.017402153
 theme_override_font_sizes/font_size = 64
 text = "Start Defending"
 
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 346.0
+offset_right = 754.0
+offset_bottom = 427.0
+theme_override_colors/font_color = Color(0.124501534, 0.52097106, 3.85046e-07, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Tutorial"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

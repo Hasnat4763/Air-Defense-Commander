@@ -14,13 +14,26 @@ var shots_fired = 0
 
 func _ready() -> void:
 	$StartScreen.start.connect(start_showing_game_story)
+	$StartScreen.tutorial.connect(start_tutorial)
 	$Story1st.hide()
 	$Player.hide()
 	$UI.hide()
+	$tutorial.hide()
 	$Player.scored.connect(scored)
 	$Story1st.start.connect(start_game)
 	$Player.shot_fired.connect(shot_fired_calc)
 
+func start_tutorial():
+	$StartScreen.hide()
+	$tutorial.show()
+	$tutorial/UI.show()
+	$tutorial.tutorial = true
+	$tutorial.show_stage_text()
+	$tutorial.tutorial_end.connect(tutorial_ended)
+
+func tutorial_ended():
+	$tutorial.hide()
+	start_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

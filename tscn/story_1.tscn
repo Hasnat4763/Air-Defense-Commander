@@ -17,17 +17,11 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed(\"ui_accept\"):
 		story_finish += 1
 		if story_finish == 1:
-			story_continue_1()
-		if story_finish == 2:
 			story_continue_2()
-		if story_finish == 3:
+		if story_finish == 2:
 			story_continue_3()
-		if story_finish == 4:
+		if story_finish == 3:
 			start.emit()
-
-func story_continue_1():
-	$Label.text = \"All Able Bodied Man \\n has been Recruited in the Military\"
-	$Sprite2D.hide()
 
 func story_continue_2():
 	$Label.text = \"You Have been recruited \\n in the Anti Aircraft Artillery Regiment\"
@@ -50,13 +44,19 @@ scale = Vector2(0.8836805, 0.7472222)
 texture = ExtResource("1_bm6fj")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 130.0
-offset_top = 224.0
-offset_right = 319.0
-offset_bottom = 325.0
+offset_left = 92.0
+offset_top = 216.0
+offset_right = 379.0
+offset_bottom = 317.0
 text = "In Agartha
 
-A news is broadcasted
- in the whole country"
+Every able bodied man is conscripted"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 492.0
+offset_right = 192.0
+offset_bottom = 519.0
+text = "Press \"Enter\" to continue"

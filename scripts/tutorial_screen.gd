@@ -23,12 +23,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not tutorial:
 		return
-	if Input.is_action_just_pressed("ui_accept"):
-		tutorial_stage += 1
-		show_stage_text()
+	
 	match tutorial_stage:
 		0:
-			pass
+			if Input.is_action_just_pressed("ui_accept"):
+				tutorial_stage += 1
+				show_stage_text()
 		1:
 			bomber_spawn_timer_calc += delta
 			if bomber_spawn_timer_calc >= bomber_interval:
@@ -45,32 +45,31 @@ func _process(delta: float) -> void:
 func show_stage_text():
 	match tutorial_stage:
 		0:
-			$UI/Tutorial.text = "Welcome to Air Defense Command \n use your mouse to aim \n leftclick to fire \n space to continue"
+			$UI/Tutorial.text = "Welcome to Air Defense Command \n use your mouse to aim \n leftclick to fire \n 'enter' to continue"
 			
 		1:
 			$Player.game_running = true
 			$Player.show()
 			$UI/Tutorial.text = "In real war you have to figure out where you need to shoot \n for now we are giving you a chance \n shoot at the green circle in front of the aircraft"
-			#$UI/skip.show()
+
 		2:
 			current_hits = 0
 			$UI/Tutorial.text = "Fighters Are Faster Targets so you need more lead"
 		3:
 			$Player.game_running = false
 			$UI/Tutorial.text = "Excellent! You are to be shipped out today."
-			#$UI.skip.hide()
 			for i in get_tree().get_nodes_in_group("tutorial"):
 				i.queue_free()
 func aircraft_hit():
-	if tutorial_stage == 1:
+	if tutorial_stage == 1 or tutorial_stage == 2:
 		current_hits += 1
 		$UI/Tutorial.text = "Hit"
 		$UI/Score.text = "Score: " + str(current_hits)
-		
-		if current_hits >= hits_needed:
-			tutorial_stage = 2
-			await get_tree().create_timer(1.0).timeout
+		if current_hits >= hits_needed and tutorial_stage < 3:
+			tutorial_stage += 1
+			await get_tree().create_timer(0.5).timeout
 			show_stage_text()
+
 func spawn_tutorial_bomber():
 	if current_hits >= hits_needed:
 		return

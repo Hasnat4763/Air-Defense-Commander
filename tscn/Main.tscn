@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://baasbv75ckcpd" path="res://tscn/player.tscn" id="3_yanl8"]
 [ext_resource type="PackedScene" uid="uid://ngyb5510os2y" path="res://tscn/tutorial.tscn" id="4_r3xed"]
 [ext_resource type="Texture2D" uid="uid://c6re7wx7nip4d" path="res://sprites/bg.png" id="5_jboqg"]
-[ext_resource type="PackedScene" uid="uid://x35ake3tc02y" path="res://tscn/story_1.tscn" id="7_ko54i"]
 [ext_resource type="PackedScene" uid="uid://dfr7meaj57wdp" path="res://tscn/end_screen.tscn" id="8_n3buc"]
+[ext_resource type="PackedScene" uid="uid://x35ake3tc02y" path="res://tscn/story_1.tscn" id="8_r3xed"]
 
 [node name="Main_Screen" type="Node2D"]
 script = ExtResource("1_yanl8")
@@ -41,8 +41,9 @@ text = "Score: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Story1st" parent="." instance=ExtResource("7_ko54i")]
-
 [node name="end_screen" parent="." instance=ExtResource("8_n3buc")]
+
+[node name="Story1st" parent="." instance=ExtResource("8_r3xed")]
+visible = false
 
 [node name="StartScreen" parent="." instance=ExtResource("3_jboqg")]

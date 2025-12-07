@@ -35,6 +35,11 @@ func _process(delta: float) -> void:
 				spawn_tutorial_bomber()
 				bomber_spawn_timer_calc = 0
 		2:
+			bomber_spawn_timer_calc += delta
+			if bomber_spawn_timer_calc >= bomber_interval:
+				spawn_tutorial_fighters()
+				bomber_spawn_timer_calc = 0
+		3:
 			complete_tutorial()
 
 func show_stage_text():
@@ -48,6 +53,9 @@ func show_stage_text():
 			$UI/Tutorial.text = "In real war you have to figure out where you need to shoot \n for now we are giving you a chance \n shoot at the green circle in front of the aircraft"
 			#$UI/skip.show()
 		2:
+			current_hits = 0
+			$UI/Tutorial.text = "Fighters Are Faster Targets so you need more lead"
+		3:
 			$Player.game_running = false
 			$UI/Tutorial.text = "Excellent! You are to be shipped out today."
 			#$UI.skip.hide()
@@ -72,7 +80,16 @@ func spawn_tutorial_bomber():
 	bomber.position.y = randi_range(10, 500)
 	bomber.add_to_group("enemy")
 	add_child(bomber)
-	
+
+func spawn_tutorial_fighters():
+	if current_hits >= hits_needed:
+		return
+	var fighter = tutorial_fighter_scene.instantiate()
+	fighter.position.x = 0
+	fighter.position.y = randi_range(10, 500)
+	fighter.add_to_group("enemy")
+	add_child(fighter)
+
 func skip_button_pressed():
 	tutorial = false
 	queue_free()

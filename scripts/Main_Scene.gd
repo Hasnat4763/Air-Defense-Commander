@@ -17,6 +17,7 @@ func _ready() -> void:
 	$StartScreen.tutorial.connect(start_tutorial)
 	$Story1st.hide()
 	$Player.hide()
+	$end_screen.hide()
 	$UI.hide()
 	$tutorial.hide()
 	$Player.scored.connect(scored)
@@ -55,7 +56,7 @@ func start_game():
 	$Story1st.hide()
 	$Player.show()
 	$UI.show()
-	random_aircraft_number_gen()
+	#random_aircraft_number_gen()
 	$Player.game_running = true
 	$UI/Score.text = "Score: " + str(score)
 	game_running = true
@@ -90,7 +91,8 @@ func end_game():
 	$end_screen/shot_fired.text = "You've fired " + str(shots_fired) + " shots"
 	$end_screen/Score.text = "You've Destroyed " + str(score) + " Aircrafts \n from a formation of " + str(needed_aircraft_bomber + needed_aircraft_fighter)
 	var percentage = score * 100 / float(shots_fired)
-	$end_screen/Conclusion.text = str(percentage) + "% of your shots were a direct hit"
+	$UI.hide()
+	$end_screen/Conclusion.text = str(floor(percentage)) + "% of your shots were a direct hit"
 	for i in get_tree().get_nodes_in_group("enemy"):
 		i.queue_free()
 

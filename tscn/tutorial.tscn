@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://ngyb5510os2y"]
+[gd_scene load_steps=6 format=3 uid="uid://ngyb5510os2y"]
 
 [ext_resource type="Script" uid="uid://bo7abj8mvwchn" path="res://scripts/tutorial_screen.gd" id="1_owhag"]
 [ext_resource type="PackedScene" uid="uid://baasbv75ckcpd" path="res://tscn/player.tscn" id="2_0u44k"]
 [ext_resource type="PackedScene" uid="uid://02oa1w1xc8ag" path="res://tscn/bomber_tutorial.tscn" id="2_k1doy"]
 [ext_resource type="Texture2D" uid="uid://c6re7wx7nip4d" path="res://sprites/bg.png" id="3_0u44k"]
+[ext_resource type="PackedScene" uid="uid://dg7cu5m0mxivo" path="res://tscn/tutorial_fighter.tscn" id="3_c1apy"]
 
 [node name="tutorial" type="Node2D" node_paths=PackedStringArray("player_ref")]
 script = ExtResource("1_owhag")
 tutorial_bomber_scene = ExtResource("2_k1doy")
+tutorial_fighter_scene = ExtResource("3_c1apy")
 player_ref = NodePath("Player")
 
 [node name="Background" type="Sprite2D" parent="."]

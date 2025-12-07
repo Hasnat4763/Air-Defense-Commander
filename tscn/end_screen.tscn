@@ -7,21 +7,24 @@
 [node name="Score" type="Label" parent="."]
 offset_left = 551.0
 offset_top = 239.0
-offset_right = 892.0
+offset_right = 735.0
 offset_bottom = 262.0
+theme_override_colors/font_color = Color(0.833207, 0.5214319, 0, 1)
 text = "You have scored n Hits"
 
 [node name="shot_fired" type="Label" parent="."]
-offset_left = 120.0
-offset_top = 237.0
-offset_right = 385.0
-offset_bottom = 286.0
+offset_left = 195.0
+offset_top = 240.0
+offset_right = 460.0
+offset_bottom = 289.0
+theme_override_colors/font_color = Color(0, 0.49736935, 0.11511301, 1)
 text = "You've fired n shots on m aircrafts
 "
 
 [node name="Conclusion" type="Label" parent="."]
 offset_right = 960.0
 offset_bottom = 171.0
+theme_override_colors/font_color = Color(0.68037254, 0.44566822, 0, 1)
 text = "Thanks soldier for your contribution on defending Agartha Today"
 horizontal_alignment = 1
 vertical_alignment = 1

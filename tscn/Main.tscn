@@ -44,6 +44,5 @@ vertical_alignment = 1
 [node name="Story1st" parent="." instance=ExtResource("7_ko54i")]
 
 [node name="end_screen" parent="." instance=ExtResource("8_n3buc")]
-visible = false
 
 [node name="StartScreen" parent="." instance=ExtResource("3_jboqg")]

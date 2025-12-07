@@ -14,18 +14,6 @@ func _process(delta: float) -> void:
 		queue_free()
 	update_leading_point()
 
-
-
-func create_circle_texture(radius: int, color: Color) -> ImageTexture:
-	var image = Image.create(radius*2, radius*2, false, Image.FORMAT_RGBA8)
-	for x in range(radius*2):
-		for y in range(radius*2):
-			var dist = Vector2(x-radius, y-radius).length()
-			if dist <= radius and dist >= radius - 3:
-				image.set_pixel(x, y, color)
-	return ImageTexture.create_from_image(image)
-				
-				
 func update_leading_point():
 	var player = get_tree().get_first_node_in_group("player")
 	if not player:
